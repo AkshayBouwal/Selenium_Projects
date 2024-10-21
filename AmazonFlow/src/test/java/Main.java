@@ -4,6 +4,8 @@ import CheckOut.CheckOut;
 import FindProduct.FindProduct;
 import HomePage.HomePage;
 import ProductSelection.ProductSelection;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Main {
@@ -16,14 +18,14 @@ public class Main {
     private BrowserClose close;
 
 
-    @Test
+    @BeforeTest
     public void testCase1() {
 
         browser = new BrowserLaunch();
 
     }
 
-    @Test(dependsOnMethods = "testCase1")
+    @Test()
     public void testCase2() {
 
         homePage = new HomePage(browser.driver, "https://www.amazon.in");
@@ -52,7 +54,7 @@ public class Main {
 
     }
 
-    @Test(dependsOnMethods = "testCase5")
+    @AfterTest
     public void testCase6() {
 
         close = new BrowserClose(checkOut.driver);
