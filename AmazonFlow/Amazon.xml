@@ -3,6 +3,10 @@
 
 <suite name="Amazon Testing Flow">
 
+    <listeners>
+        <listener class-name="Utilities.ExtentReportManager"/>
+    </listeners>
+
 
     <test name="Amazon Flow">
 

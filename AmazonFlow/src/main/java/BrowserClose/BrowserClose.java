@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class BrowserClose {
 
-    private WebDriver driver;
+    public WebDriver driver;
 
     public BrowserClose(WebDriver driver) {
         this.driver = driver;

@@ -40,7 +40,8 @@ public class BrowserLaunch {
         options.addArguments("start-maximized");
 
         WebDriver driver = new ChromeDriver(options);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         return driver;
 

@@ -1,6 +1,7 @@
 package FindProduct;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -21,7 +22,7 @@ public class FindProduct {
     private List<WebElement> suggestionList;
 
 
-    public FindProduct(WebDriver driver,String productName) {
+    public FindProduct(WebDriver driver, String productName) {
         this.driver = driver;
         this.productName = productName;
         PageFactory.initElements(driver, this);
@@ -34,12 +35,22 @@ public class FindProduct {
 
         for (WebElement element : suggestionList) {
 
-            if (element.findElement(By.xpath("child::div[1]")).getText().equals("laptop under 35000")) {
+            try {
 
-                element.findElement(By.xpath("child::div[1]")).click();
-                break;
+                if (element.findElement(By.xpath("child::div[1]")).getText().equals("laptop under 35000")) {
 
+                    element.findElement(By.xpath("child::div[1]")).click();
+                    break;
+
+                }
+
+            } catch (StaleElementReferenceException e) {
+                /*
+                Another Solution: using another form of xpath to click on same element
+                 */
+                System.out.println("Stale Element Reference Exception");
             }
+
 
         }
     }
