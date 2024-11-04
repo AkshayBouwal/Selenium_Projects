@@ -14,10 +14,10 @@
             <class name="Main">
 
                 <methods>
-                    <include name="testCase2"/>
-                    <include name="testCase3"/>
-                    <include name="testCase4"/>
-                    <include name="testCase5"/>
+                    <include name="homePageScreen"/>
+                    <include name="searchProduct"/>
+                    <include name="productSelection"/>
+                    <include name="checkOut"/>
                 </methods>
 
             </class>

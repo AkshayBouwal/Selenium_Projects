@@ -28,7 +28,7 @@ public class Main {
     }
 
     @Test(priority = 1)
-    public void testCase2() {
+    public void homePageScreen() {
 
         WaitManager.implicitWait(browser.driver, 5);
 
@@ -48,7 +48,7 @@ public class Main {
     }
 
     @Test(priority = 2)
-    public void testCase3() {
+    public void searchProduct() {
 
 
         product = new FindProduct(homePage.driver, "Laptop");
@@ -58,7 +58,7 @@ public class Main {
     }
 
     @Test(priority = 3)
-    public void testCase4() {
+    public void productSelection() {
 
         selection = new ProductSelection(product.driver, "Lenovo", "Intel Core i3", "8");
         driver = product.driver;
@@ -67,7 +67,7 @@ public class Main {
     }
 
     @Test(priority = 4)
-    public void testCase5() {
+    public void checkOut() {
 
         checkOut = new CheckOut(selection.driver);
         driver = selection.driver;

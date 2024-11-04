@@ -4,6 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -25,6 +26,7 @@ public class ExtentReportManager implements ITestListener {
 
         report.config().setReportName("Amazon Report");
         report.config().setDocumentTitle("Test Reports");
+        report.config().setTheme(Theme.DARK);
 
 
         extent = new ExtentReports();
