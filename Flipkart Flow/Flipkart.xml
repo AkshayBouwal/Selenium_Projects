@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Flipkart Testing Flow">
+
+    <listeners>
+        <listener class-name="utilities.ExtentReportManager"/>
+    </listeners>
+
+
+    <test name="Flipkart Flow">
+
+        <classes>
+            <class name="TestRunner">
+
+                <methods>
+                    <include name="homePageScreen"/>
+                    <include name="searchProduct"/>
+                    <include name="productSelection"/>
+                    <include name="checkOut"/>
+                </methods>
+
+            </class>
+
+
+        </classes>
+
+    </test>
+
+
+</suite>
